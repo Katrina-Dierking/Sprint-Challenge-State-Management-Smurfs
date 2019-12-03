@@ -3,4 +3,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./components/App";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+import SmurfContext from './SmurfContext'
+
+ReactDOM.render(
+    <SmurfContext.Provider>
+        <App />
+    </SmurfContext.Provider>, 
+    document.getElementById("root"));
+
+    // value = {{smurfs, addSmurf, deleteSmurf}}
