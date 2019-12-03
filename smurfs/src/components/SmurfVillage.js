@@ -8,12 +8,13 @@ display: flex;
 flex-direction:column;
 max-width:20%;
 justify-content: space-around;
-margin: 5%;
+margin-left: 40%;
+margin-bottom:1%;
 align-items: center;
 font-family: The Wild Hammers;
 border-top: 1px solid black;
 border-bottom: 1px solid black;
-background-color:white;
+background-color:#e3aec7;
 `
 
 const SmurfVillage = () => {
