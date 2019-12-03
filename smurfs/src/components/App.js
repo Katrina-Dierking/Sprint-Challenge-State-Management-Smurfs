@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
+import SmurfForm from './SmurfForm';
+import SmurfVillage from './SmurfVillage';
 import SmurfContext from '../SmurfContext';
-import SmurfVillage from './components/SmurfVillage';
 
 import "./App.css";
 
 
-function App (){
+const App = () => {
   const [smurfs, setSmurfs] = useState([])
 
   useEffect( () => {
@@ -39,18 +40,19 @@ function App (){
   };
 
     return (
+      <SmurfContext.Provider value = {{smurfs, addSmurf, deleteSmurf}}>
       <div className="App">
         <h1>Welcome to Smurf Village</h1>
         <h2>Help fill our village with Smurfs</h2>
 
-        <SmurfContext.Provider value = {{smurfs, addSmurf, deleteSmurf}}>
 
-        {/* <SmurfForm /> */}
+        <SmurfForm />
         <hr></hr>
         <SmurfVillage /> 
-        </SmurfContext.Provider>
+       
         
       </div>
+      </SmurfContext.Provider>
     );
   }
 

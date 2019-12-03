@@ -3,7 +3,20 @@ import SmurfContext from '../SmurfContext';
 
 import styled from 'styled-components'
 
-function SmurfVillage () {
+const Container = styled.div`
+display: flex;
+flex-direction:column;
+max-width:20%;
+justify-content: space-around;
+margin: 5%;
+align-items: center;
+font-family: The Wild Hammers;
+border-top: 1px solid black;
+border-bottom: 1px solid black;
+background-color:white;
+`
+
+const SmurfVillage = () => {
     const {smurfs, deleteSmurf} = useContext(SmurfContext);
 
     return (
@@ -12,14 +25,14 @@ function SmurfVillage () {
         {smurfs.map(smurf => (
             <div>
                 <Container>
-                    <h3>SMurf Name: {smurf.name}
+                    <h3>Smurf Name: {smurf.name}
                     <br />
                     Age: {smurf.age}
                     <br />
-                    Height: {smurf.height} cm </h3>
+                    Height: {smurf.height}cm</h3>
 
                     <button className = "remove-button"
-                        onClick = {() => deleteSmurf(smurf.id)}
+                        onClick={() => deleteSmurf(smurf.id)}
                         >
                         Remove Smurf
                     </button>
